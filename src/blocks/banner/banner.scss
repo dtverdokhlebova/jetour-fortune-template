@@ -8,6 +8,7 @@
     min-height: 100vh;
     padding: max(120px, 5.2vw) 0;
     @include media-mobile {
+      min-height: 100dvh;
       justify-content: flex-end;
       padding: 435px 0 25px;
     }
@@ -28,6 +29,12 @@
       left: -10vw;
       background: $black;
       filter: blur(72.7px);
+      @include media-mobile {
+        top: -80px;
+        right: -60px;
+        bottom: -20px;
+        left: -60px;
+      }
     }
   }
   &__title {
@@ -207,7 +214,9 @@
     z-index: 2;
     width: 48.85vw;
     @include media-mobile {
-      position: static;
+      position: relative;
+      inset: 0;
+      z-index: 6;
       width: 143px;
       margin: 0 auto 5px;
     }
@@ -239,6 +248,14 @@
       left: 0;
       width: auto;
       height: auto;
+    }
+    @include media-mobile {
+      top: unset;
+      right: unset;
+      bottom: -30px;
+      left: -250px;
+      width: 1000px;
+      height: 650px;
     }
     img {
       width: 100%;

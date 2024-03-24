@@ -26,7 +26,6 @@ export default function styles() {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({ cascade: false }))
     .pipe(gulp.dest('build'))
-    .pipe(gulp.src('src/**/*.scss')) // преобразование для блоков в css
     .pipe(filter(['src/blocks/**/*.scss', '!src/blocks/_ui/**/*.scss']))
     .pipe(header(headerStyles))
     .pipe(sassGlob())
