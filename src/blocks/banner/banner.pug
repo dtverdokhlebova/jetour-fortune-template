@@ -1,0 +1,35 @@
+mixin banner(mods)
+  -
+    const baseName = 'banner'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .banner(class=allMods)&attributes(attributes)
+    .inner
+      .banner__wrapper
+        .banner__present
+          img.banner__present-deskt(src='img/banner_present.png', alt='')
+          img.banner__present-mob(src='img/banner_present_mob.png', alt='')
+        .banner__content
+          .banner__title Получите подарок прямо сейчас
+          .banner__descr Крутите колесо и выигрывайте лучшие призы при покупке автомобиля
+          a.banner__button(href='#')
+            span Крутить колесо
+    .banner__whell
+      .banner__whell-wrapper
+        .banner__whell-img
+          img(src='img/banner_whell_img.png', alt='')
+        .banner__whell-text
+          .banner__whell-label.banner__whell-label--3 Подарок 3
+          .banner__whell-label.banner__whell-label--4.banner__whell-label--white Подарок 4
+          .banner__whell-label.banner__whell-label--5 Подарок 5
+          .banner__whell-label.banner__whell-label--6.banner__whell-label--white Подарок 6
+    .banner__bg
+      img(src='img/banner_bg.png', alt='')
+    block

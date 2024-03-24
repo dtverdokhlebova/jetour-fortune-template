@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+*:focus {
+  outline: none;
+}
+html {
+  box-sizing: border-box;
+  line-height: 1;
+}
+body {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+}
+
+// defaults
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  font-family: $font;
+  background: $black;
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+.inner {
+  width: 100%;
+  max-width: 84.375vw;
+  margin: 0 auto;
+  padding: 0 10px;
+  @include media-mobile {
+    max-width: 100%;
+  }
+}
